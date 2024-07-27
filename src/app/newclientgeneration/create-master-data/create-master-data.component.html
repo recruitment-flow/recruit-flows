@@ -1,0 +1,137 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="addRegistrationForm" (ngSubmit)="onSubmit()">
+    <ng-container *ngIf="data == 'clients'">
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="clientName">Client Name</label>
+          <input type="text" class="form-control" id="clientName" formControlName="clientName" placeholder="Client Name">
+        </div>
+      </div>    
+    </div>
+</ng-container>
+<ng-container *ngIf="data == 'groups'">    
+    <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="groupName">Group Name</label>
+            <input type="text" class="form-control" id="groupName" formControlName="groupName" placeholder="group Name">
+          </div>
+        </div>    
+      </div>
+</ng-container>
+<ng-container *ngIf="data == 'managers'">
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="clientName">Client Name</label>
+          <select class="form-control" id="clientName" formControlName="clientName">
+            <option selected>Select Client</option>
+            <option *ngFor="let client of clientList" [value]="client.name">{{ client.name }}</option>
+          </select>
+        </div>
+      </div>    
+    </div>
+    <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="groupName">Group Name</label>
+            <select class="form-control" id="groupName" formControlName="groupName">
+              <option selected>Select Group</option>
+              <option *ngFor="let group of groupList" [value]="group.name">{{ group.name }}</option>
+            </select>
+           </div>
+        </div>    
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="managerName">Manager Name</label>
+            <input type="text" class="form-control" id="managerName" formControlName="managerName" placeholder="Manager Name">
+          </div>
+        </div>    
+      </div>
+</ng-container>
+<ng-container *ngIf="data == 'lead'">
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="clientName">Client Name</label>
+          <input type="text" class="form-control" id="clientName" formControlName="clientName" placeholder="Client Name">
+        </div>
+      </div>    
+    </div>    
+      <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <label for="groupName">Group Name</label>
+              <input type="text" class="form-control" id="groupName" formControlName="groupName" placeholder="Group Name">
+            </div>
+          </div>    
+        </div>
+        <div class="form-row">
+          <div class="col">
+            <div class="form-group">
+              <label for="managerName">Manager Name</label>
+              <input type="text" class="form-control" id="managerName" formControlName="managerName" placeholder="Manager Name">
+            </div>
+          </div>    
+        </div>
+        <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="leadName">Lead Name</label>
+                <input type="text" class="form-control" id="leadName" formControlName="leadName" placeholder="Lead Name">
+              </div>
+            </div>    
+          </div>
+</ng-container>
+<ng-container *ngIf="data == 'recruiter'">
+    <div class="form-row">
+        <div class="col">
+          <div class="form-group">
+            <label for="clientName">Client Name</label>
+            <input type="text" class="form-control" id="clientName" formControlName="clientName" placeholder="Client Name">
+          </div>
+        </div>    
+      </div>    
+        <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="groupName">Group Name</label>
+                <input type="text" class="form-control" id="groupName" formControlName="groupName" placeholder="Group Name">
+              </div>
+            </div>    
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                <label for="managerName">Manager Name</label>
+                <input type="text" class="form-control" id="managerName" formControlName="managerName" placeholder="Manager Name">
+              </div>
+            </div>    
+          </div>
+          <div class="form-row">
+              <div class="col">
+                <div class="form-group">
+                  <label for="leadName">Lead Name</label>
+                  <input type="text" class="form-control" id="leadName" formControlName="leadName" placeholder="Lead Name">
+                </div>
+              </div>    
+            </div>
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="recruiter">Recruiter Name</label>
+          <input type="text" class="form-control" id="recruiter" formControlName="recruiter" placeholder="Recruiter Name">
+        </div>
+      </div>    
+    </div>
+</ng-container>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" type="submit">Add</button>
+      <button mat-button class="cancel-button" (click)="closeModal()">Cancel</button>
+    </div>
+  </form>
+</mat-dialog-content>

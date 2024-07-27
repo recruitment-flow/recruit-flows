@@ -1,0 +1,50 @@
+<clr-main-container>
+  <clr-header class="header-5">
+    <div class="branding">
+      <a href="javascript://" class="nav-link">
+        <cds-icon shape="vm"></cds-icon>
+        <span class="title">INFOWAYS</span>
+      </a>
+    </div>
+    <div class="header-actions">
+      <clr-dropdown>
+        <button class="nav-text" clrDropdownTrigger>
+          <cds-icon shape="user" size="md"></cds-icon>
+          <cds-icon shape="angle" rotation="180"></cds-icon>
+        </button>
+        <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+          <a href="javascript://" clrDropdownItem routerLink="/main/about">About</a>
+          <a href="javascript://" clrDropdownItem routerLink="/main/preference">Preferences</a>
+          <a href="javascript://" clrDropdownItem (click)="onLogout()">Log out</a>
+        </clr-dropdown-menu>
+      </clr-dropdown>
+    </div>
+  </clr-header>
+
+  <div class="content-container">
+    <main class="content-area">
+      <router-outlet></router-outlet>
+    </main>
+
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" [(clrVerticalNavCollapsed)]="collapsed" [clr-nav-level]="2">
+      <a clrVerticalNavLink routerLink="./dashboard" routerLinkActive="active">
+        <cds-icon shape="grid-chart" solid="true" clrVerticalNavIcon></cds-icon>Dash Board
+      </a>
+      <a clrVerticalNavLink routerLink="./requirements" routerLinkActive="active">
+        <cds-icon shape="bullseye" solid="true" clrVerticalNavIcon></cds-icon> Requirements
+      </a>
+      <a clrVerticalNavLink routerLink="./reports" routerLinkActive="active">
+        <cds-icon shape="bar-chart" solid="true" clrVerticalNavIcon></cds-icon> Report
+      </a>
+      <a clrVerticalNavLink routerLink="./submission" routerLinkActive="active">
+        <cds-icon shape="users" solid="true" clrVerticalNavIcon></cds-icon>Submission
+      </a>
+      <a clrVerticalNavLink routerLinkActive="./client" routerLink="./client">
+        <cds-icon shape="organization" solid="true" clrVerticalNavIcon></cds-icon> Client Generation
+      </a>
+    </clr-vertical-nav>
+    
+    
+  </div>
+
+</clr-main-container>

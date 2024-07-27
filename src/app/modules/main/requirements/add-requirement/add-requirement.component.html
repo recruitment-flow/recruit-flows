@@ -1,0 +1,184 @@
+<h2 mat-dialog-title>Add Requirement</h2>
+<mat-dialog-content>
+  <form [formGroup]="addRequirementForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputReqNumber">Req Number</label>
+          <input type="text" class="form-control" id="inputReqNumber" formControlName="reqNumber"
+            placeholder="ReqNumber">
+        </div>
+      </div>
+ 
+      <div class="col">
+        <div class="form-group">
+          <label for="inputReqDate">Req Date</label>
+          <input type="date" class="form-control" id="inputReqDate" formControlName="reqDate" placeholder="Req Date">
+        </div>
+      </div>
+ 
+      <div class="col">
+        <div class="form-group">
+          <label for="inputRequirement">Requirement</label>
+          <input type="text" class="form-control" id="inputRequirement" formControlName="requirement"
+            placeholder="Requirement">
+        </div>
+      </div>
+    </div>
+ 
+ 
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputNoofpositioms">No of Positions</label>
+          <input type="text" class="form-control" id="inputNoofpositioms" formControlName="noOfPositions">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputWorkLocation">Work Location</label>
+          <input type="text" class="form-control" id="inputWorkLocation" formControlName="workLocation">
+        </div>
+      </div>
+ 
+      <div class="col">
+        <div class="form-group">
+          <label for="inputCustomerName">Customer Name</label>
+          <input type="text" class="form-control" id="inputCustomerName" formControlName="customerName">
+        </div>
+      </div>
+    </div>
+ 
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputClientName">Client Name</label>
+          <select id="inputClientName" class="form-control" formControlName="clientName">
+            <option>ALL CLIENTS</option>
+            <option>Client 1</option>
+            <option>Client 2</option>
+          </select>
+        </div>
+      </div>
+ 
+      <div class="col">
+        <div class="form-group">
+          <label for="inputGroup">Group</label>
+          <select id="inputGroup" class="form-control" formControlName="group">
+            <option>Select Group Name</option>
+            <option>Group 1</option>
+            <option>Group 2</option>
+          </select>
+        </div>
+      </div>
+ 
+      <div class="col">
+        <div class="form-group">
+          <label for="inputManagerName">Manager Name</label>
+          <select id="inputManagerName" class="form-control" formControlName="managerName">
+            <option>Select Manager</option>
+            <option>Manager 1</option>
+            <option>Manager 2</option>
+          </select>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputLead">Lead</label>
+          <select id="inputLead" class="form-control" formControlName="lead">
+            <option>--Select Lead--</option>
+            <option>Lead 1</option>
+            <option>Lead 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputRecruiter">Recruiter</label>
+          <select id="inputRecruiter" class="form-control" formControlName="recruiter">
+            <option>--Select Recruiter--</option>
+            <option>Recruiter 1</option>
+            <option>Recruiter 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputBRNo">BR No</label>
+          <input type="text" class="form-control" id="inputBRNo" formControlName="brNo" placeholder="BR No">
+        </div>
+      </div>
+    </div>
+ 
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputSRNo">SR No</label>
+          <input type="number" class="form-control" id="inputSRNo" formControlName="srNo" placeholder="SR No">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputSOT">Type of SOT</label>
+          <select id="inputSOT" class="form-control" formControlName="typeOfSot">
+            <option>SELECT</option>
+            <option>SOT 1</option>
+            <option>SOT 2</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="inputRehash">Rehash?</label>
+          <select id="inputRehash" class="form-control" formControlName="rehash">
+            <option>NO</option>
+            <option>YES</option>
+          </select>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="form-row">
+      <div class="col">
+        <div class="form-group">
+          <label for="inputCustomerName">Customer Name</label>
+          <input type="text" class="form-control" id="inputCustomerName" formControlName="customerName">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group checkbox-group">
+          <label for="inputeasy">Easy</label>
+          <input class="form-check-input" type="checkbox" formControlName="easy" id="gridCheckEasy">
+        </div>
+       
+        <div class="form-group checkbox-group">
+          <label for="inputmedium">Medium</label>
+          <input class="form-check-input" type="checkbox" formControlName="medium" id="gridCheckMedium">
+        </div>
+        <div class="form-group checkbox-group">
+          <label for="inputdifficult">Difficult</label>
+          <input class="form-check-input" type="checkbox" formControlName="difficult" id="gridCheckDifficult">
+        </div>
+        <div class="form-group checkbox-group">
+          <label for="inputverydifficult">Very Difficult</label>
+          <input class="form-check-input" type="checkbox" formControlName="veryDifficult" id="gridCheckVeryDifficult">
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+    <div class="col">
+      <div class="form-group">
+        <label for="inputSkillsRequired">Skills Required</label>
+        <input type="text" class="form-control" id="skillsRequired" formControlName="skillsRequired" placeholder="Skills Required">
+      </div>
+    </div>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" type="submit">Add</button>
+      <button mat-button class="cancel-button" (click)="closeModal()">Cancel</button>
+    </div>
+  </form>
+</mat-dialog-content>

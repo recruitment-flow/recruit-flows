@@ -1,0 +1,62 @@
+<div>
+  <div>
+    <div class="clr-col-8">
+      <h3>
+        <cds-icon shape="bars"></cds-icon>
+        User Requirements
+      </h3>
+    </div>
+    <div class="header-actions" style="text-align: right;">
+      <button class="btn btn-outline" (click)="openAddRequirementModal()">
+        <strong>+</strong> Add Requirement
+      </button>
+    </div>
+  </div>
+  
+  <clr-datagrid>
+    <clr-dg-column>Requirement Number</clr-dg-column>
+    <clr-dg-column>Requirement Date</clr-dg-column>
+    <clr-dg-column>Requirement</clr-dg-column>
+    <clr-dg-column>Number of Positions</clr-dg-column>
+    <clr-dg-column>Work Location</clr-dg-column>
+    <clr-dg-column>Customer Name</clr-dg-column>
+    <clr-dg-column>Client Name</clr-dg-column>
+    <clr-dg-column>Group</clr-dg-column>
+    <clr-dg-column>Manager Name</clr-dg-column>
+    <clr-dg-column>Lead</clr-dg-column>
+    <clr-dg-column>Recruiter</clr-dg-column>
+    <clr-dg-column>BR No</clr-dg-column>
+    <clr-dg-column>SR No</clr-dg-column>
+    <clr-dg-column>Type of SOT</clr-dg-column>
+    <clr-dg-column>Rehash?</clr-dg-column>
+    <clr-dg-column>Requirement Level</clr-dg-column>
+    <clr-dg-column>Skills Required</clr-dg-column>
+
+    <clr-dg-row *ngFor="let requirement of requirements">
+      <clr-dg-cell>{{ requirement.requirementNumber }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirementDate }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirement }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.numberOfPositions }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.workLocation }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.customerName }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.clientName }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.group }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.managerName }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.lead }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.recruiter }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.brNo }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.srNo }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.typeOfSOT }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.rehash }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirementLevel }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.skillsRequired }}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <clr-dg-pagination #pagination [clrDgPageSize]="10">
+        <clr-dg-page-size [clrPageSizeOptions]="[10, 20, 50, 100]">Users per page</clr-dg-page-size>
+        {{ pagination.firstItem + 1 }} - {{ pagination.lastItem + 1 }} of {{ pagination.totalItems }} users
+      </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+</div>
