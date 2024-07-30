@@ -1,6 +1,6 @@
 import { ExcelService } from './services/excel.service';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { AppMatTableComponent } from './app-mat-table/app-mat-table.component'
@@ -50,8 +50,10 @@ import { AppMatTableComponent } from './app-mat-table/app-mat-table.component'
     MatExpansionModule,
     MatIconModule,
     MatTableModule,
+    FormsModule,
     
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     MainService,
     AlertService,

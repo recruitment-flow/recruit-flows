@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RequirementsComponent } from './requirements/requirements.component';
 import { NewclientgenerationComponent } from 'src/app/newclientgeneration/newclientgeneration.component';
 import { ReportsComponent } from './reports/reports.component';
+import { AddEmployeeComponent } from './addemployee/addemployee.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'reports', component: ReportsComponent },
       { path: 'client', component: NewclientgenerationComponent },
       { path: 'submission', component: SubmissionsComponent },
+      { path: 'addemployee', component: AddEmployeeComponent },
       { path: 'about', component: AboutComponent },
     ]
   }

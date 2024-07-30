@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { ClarityModule } from '@clr/angular';
 
 import { MainRoutingModule } from './main-routing.module';
@@ -17,14 +16,15 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReportsComponent } from './reports/reports.component';
+import { AddEmployeeComponent } from './addemployee/addemployee.component';
 
 @NgModule({
   declarations: [
     MainPageComponent, SubmissionsComponent,
     AboutComponent, LayoutComponent,
-    PreferenceComponent, DashboardComponent, RequirementsComponent, AddRequirementComponent, ReportsComponent
+    PreferenceComponent, DashboardComponent, RequirementsComponent, AddRequirementComponent, ReportsComponent, AddEmployeeComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +36,9 @@ import { ReportsComponent } from './reports/reports.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MainModule { }

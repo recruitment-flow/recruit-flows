@@ -1,0 +1,165 @@
+<form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+  <clr-form>
+    <clr-input-container>
+      <label for="status">Status</label>
+      <input  clrInput id="status" formControlName="status" type="text" placeholder="Enter status">
+    </clr-input-container>
+
+    <clr-toggle-container>
+      <label for="islead">Is Lead</label>
+      <input clrToggle id="islead" formControlName="islead" type="checkbox">
+    </clr-toggle-container>
+
+    <clr-toggle-container>
+      <label for="assignItself">Assign Itself</label>
+      <input clrToggle id="assignItself" formControlName="assignItself" type="checkbox">
+    </clr-toggle-container>
+
+    <clr-input-container>
+      <label for="firstName">First Name</label>
+      <input clrInput id="firstName" formControlName="firstName" type="text" placeholder="Enter first name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="secondName">Second Name</label>
+      <input clrInput id="secondName" formControlName="secondName" type="text" placeholder="Enter second name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="lastName">Last Name</label>
+      <input clrInput id="lastName" formControlName="lastName" type="text" placeholder="Enter last name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="fatherName">Father's Name</label>
+      <input clrInput id="fatherName" formControlName="fatherName" type="text" placeholder="Enter father's name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="officeName">Office Name</label>
+      <input clrInput id="officeName" formControlName="officeName" type="text" placeholder="Enter office name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="basicSalary">Basic Salary</label>
+      <input clrInput id="basicSalary" formControlName="basicSalary" type="number" placeholder="Enter basic salary">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="branch">Branch</label>
+      <input clrInput id="branch" formControlName="branch" type="text" placeholder="Enter branch">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="department">Department</label>
+      <input clrInput id="department" formControlName="department" type="text" placeholder="Enter department">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="designation">Designation</label>
+      <input clrInput id="designation" formControlName="designation" type="text" placeholder="Enter designation">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="balanceLoan">Balance Loan</label>
+      <input clrInput id="balanceLoan" formControlName="balanceLoan" type="number" placeholder="Enter balance loan">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="address1">Address Line 1</label>
+      <input clrInput id="address1" formControlName="address1" type="text" placeholder="Enter address line 1">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="address2">Address Line 2</label>
+      <input clrInput id="address2" formControlName="address2" type="text" placeholder="Enter address line 2">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="address3">Address Line 3</label>
+      <input clrInput id="address3" formControlName="address3" type="text" placeholder="Enter address line 3">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="address4">Address Line 4</label>
+      <input clrInput id="address4" formControlName="address4" type="text" placeholder="Enter address line 4">
+    </clr-input-container>
+
+    <clr-date-container>
+      <label for="dateOfJoin">Date of Joining</label>
+      <input clrDate id="dateOfJoin" formControlName="dateOfJoin" placeholder="Select date of joining">
+    </clr-date-container>
+
+    <clr-date-container>
+      <label for="dateOfBirth">Date of Birth</label>
+      <input clrDate id="dateOfBirth" formControlName="dateOfBirth" placeholder="Select date of birth">
+    </clr-date-container>
+
+    <clr-input-container>
+      <label for="generalEmailId">General Email ID</label>
+      <input clrInput id="generalEmailId" formControlName="generalEmailId" type="email" placeholder="Enter general email ID">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="pf">PF Number</label>
+      <input clrInput id="pf" formControlName="pf" type="text" placeholder="Enter PF number">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="mobileNumber">Mobile Number</label>
+      <input clrInput id="mobileNumber" formControlName="mobileNumber" type="text" placeholder="Enter mobile number">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="accountNumber">Account Number</label>
+      <input clrInput id="accountNumber" formControlName="accountNumber" type="text" placeholder="Enter account number">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="panNumber">PAN Number</label>
+      <input clrInput id="panNumber" formControlName="panNumber" type="text" placeholder="Enter PAN number">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="esic">ESIC Number</label>
+      <input clrInput id="esic" formControlName="esic" type="text" placeholder="Enter ESIC number">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="employeeId">Employee ID</label>
+      <input clrInput id="employeeId" formControlName="employeeId" type="text" placeholder="Enter employee ID">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="managerName">Manager's Name</label>
+      <input clrInput id="managerName" formControlName="managerName" type="text" placeholder="Enter manager's name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="subManager">Sub Manager</label>
+      <input clrInput id="subManager" formControlName="subManager" type="text" placeholder="Enter sub manager's name">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="userName">Username</label>
+      <input clrInput id="userName" formControlName="userName" type="text" placeholder="Enter username">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="password">Password</label>
+      <input clrInput id="password" formControlName="password" type="password" placeholder="Enter password">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="emergencyContact">Emergency Contact</label>
+      <input clrInput id="emergencyContact" formControlName="emergencyContact" type="text" placeholder="Enter emergency contact">
+    </clr-input-container>
+
+    <clr-input-container>
+      <label for="role">Role</label>
+      <input clrInput id="role" formControlName="role" type="text" placeholder="Enter role">
+    </clr-input-container>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </clr-form>
+</form>
