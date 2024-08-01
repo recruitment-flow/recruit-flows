@@ -31,6 +31,7 @@ groupList:any;
       console.log(this.groupList)
     }
   }
+  modalOpen: boolean = true;
   createForm(data: any): FormGroup{
 
     let formGroup: FormGroup;

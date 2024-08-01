@@ -1,0 +1,47 @@
+// clr-accordion-title {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+
+clr-accordion-title .add-button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+clr-accordion-title .add-button clr-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+/* Container for accordion title */
+clr-accordion-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem; /* Adjust padding as needed */
+    height: 3rem; /* Adjust height as needed */
+  }
+  
+  /* Title text styling */
+  .title-text {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem; /* Adjust font size as needed */
+  }
+  
+  /* Styling for the add button */
+  .add-button {
+    font-size: 14px; /* Adjust font size if needed */
+  }
+  
+  /* Optional: Add some spacing between the icon and the title text */
+  clr-accordion-title .accordion-icon {
+    margin-top: 20px;
+    margin-left: auto; /* Push the icon to the right */
+    font-size: 1rem; /* Adjust icon size as needed */
+  }
+  

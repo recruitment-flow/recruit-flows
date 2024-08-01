@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MainModule } from './modules/main/main.module';
 import { LoginModule } from './modules/login/login.module';
 import { MainService } from './services/main.service';
@@ -22,9 +22,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
-import { AppMatTableComponent } from './app-mat-table/app-mat-table.component'
+import { AppMatTableComponent } from './app-mat-table/app-mat-table.component';
+import { JwtInterceptor } from '../interceptors/jwtinterceptor.service';
+import { AuthenticationService } from '../authentication/authentication.service';
+import { LocalstorageService } from '../app/services/localstorage.service';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,17 +52,22 @@ import { AppMatTableComponent } from './app-mat-table/app-mat-table.component'
     MatInputModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    MatIconModule,
     MatTableModule,
     FormsModule,
-    
+    MatListModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     MainService,
     AlertService,
     ExcelService,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    LocalstorageService,
+    AuthenticationService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    {provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })

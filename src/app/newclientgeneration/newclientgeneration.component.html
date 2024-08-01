@@ -1,83 +1,52 @@
-<mat-accordion class="example-headers-align" multi>
-    <mat-expansion-panel (click)="showTableData('clients')">
-      <mat-expansion-panel-header>
-        <mat-panel-title> 
-          Client Company ({{ clientSource.length }})
-        </mat-panel-title>
-        <mat-panel-description>
-          <button mat-icon-button (click)="$event.stopPropagation();openAddClientModal('clients');">
-            <mat-icon>add</mat-icon>
-          </button>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-  
-      <div>
-       <app-mat-table *ngIf="showClientData" [displayedColumns]="clientColumns" [columnHeaders]= "clientHeaders" [dataSource]="clientSource"></app-mat-table>
-      </div>
-    </mat-expansion-panel>
-    <mat-expansion-panel (click)="showTableData('groups')">
-        <mat-expansion-panel-header>
-          <mat-panel-title> 
-            Group ({{ groupSource.length }})
-          </mat-panel-title>
-          <mat-panel-description>
-            <button mat-icon-button (click)="$event.stopPropagation();openAddClientModal('groups');">
-              <mat-icon>add</mat-icon>
-            </button>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-    
-        <div>
-         <app-mat-table *ngIf="showGroupData" [displayedColumns]="groupColumns"  [columnHeaders]= "groupHeaders" [dataSource]="groupSource"></app-mat-table>
-        </div>
-      </mat-expansion-panel>
-      <mat-expansion-panel (click)="showTableData('managers')">
-        <mat-expansion-panel-header>
-          <mat-panel-title> 
-            Manager ({{ managerSource.length }})
-          </mat-panel-title>
-          <mat-panel-description>
-            <button mat-icon-button (click)="$event.stopPropagation();openAddClientModal('managers');">
-              <mat-icon>add</mat-icon>
-            </button>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-    
-        <div>
-         <app-mat-table *ngIf="showManagerData" [displayedColumns]="managerColumns"  [columnHeaders]= "managerHeaders" [dataSource]="managerSource"></app-mat-table>
-        </div>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title> 
-            Lead ({{ leadSource.length }})
-          </mat-panel-title>
-          <mat-panel-description>
-            <button mat-icon-button (click)="$event.stopPropagation();openAddClientModal('lead');">
-              <mat-icon>add</mat-icon>
-            </button>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-    
-        <div>
-         <app-mat-table [displayedColumns]="leadColumns"  [columnHeaders]= "leadHeaders" [dataSource]="leadSource"></app-mat-table>
-        </div>
-      </mat-expansion-panel>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title> 
-            Recruiter ({{ recruiterSource.length }})
-          </mat-panel-title>
-          <mat-panel-description>
-            <button mat-icon-button (click)="$event.stopPropagation();openAddClientModal('recruiter');">
-              <mat-icon>add</mat-icon>
-            </button>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-    
-        <div>
-         <app-mat-table [displayedColumns]="recruiterColumns"  [columnHeaders]= "recruiterHeaders" [dataSource]="recruiterSource"></app-mat-table>
-        </div>
-      </mat-expansion-panel>
-  </mat-accordion>
-  
+<clr-accordion>
+  <clr-accordion-panel>
+    <clr-accordion-title (click)="showTableData('clients')"><span>Client Company ({{ clientSource.length }})</span></clr-accordion-title>
+      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('clients');">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add
+      </button>
+    <clr-accordion-content *ngIf="showClientData">
+      <app-mat-table [displayedColumns]="clientColumns" [columnHeaders]="clientHeaders" [dataSource]="clientSource"></app-mat-table>
+    </clr-accordion-content>
+  </clr-accordion-panel>
+
+  <clr-accordion-panel>
+    <clr-accordion-title (click)="showTableData('groups')"><span>Group ({{ groupSource.length }})</span></clr-accordion-title>
+      
+      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('groups');">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add
+      </button>
+    <clr-accordion-content *ngIf="showGroupData">
+      <app-mat-table [displayedColumns]="groupColumns" [columnHeaders]="groupHeaders" [dataSource]="groupSource"></app-mat-table>
+    </clr-accordion-content>
+  </clr-accordion-panel>
+
+  <clr-accordion-panel>
+    <clr-accordion-title (click)="showTableData('managers')"><span>Manager ({{ managerSource.length }})</span></clr-accordion-title>
+      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('managers');">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add
+      </button>
+    <clr-accordion-content *ngIf="showManagerData">
+      <app-mat-table [displayedColumns]="managerColumns" [columnHeaders]="managerHeaders" [dataSource]="managerSource"></app-mat-table>
+    </clr-accordion-content>
+  </clr-accordion-panel>
+
+  <clr-accordion-panel>
+    <clr-accordion-title><span>Lead ({{ leadSource.length }})</span></clr-accordion-title>
+      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('lead');">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add
+      </button>
+    <clr-accordion-content>
+      <app-mat-table [displayedColumns]="leadColumns" [columnHeaders]="leadHeaders" [dataSource]="leadSource"></app-mat-table>
+    </clr-accordion-content>
+  </clr-accordion-panel>
+
+  <clr-accordion-panel>
+    <clr-accordion-title><span>Recruiter ({{ recruiterSource.length }})</span></clr-accordion-title>
+      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('recruiter');">
+        <i class="fa fa-plus" aria-hidden="true"></i> Add
+      </button>
+    <clr-accordion-content>
+      <app-mat-table [displayedColumns]="recruiterColumns" [columnHeaders]="recruiterHeaders" [dataSource]="recruiterSource"></app-mat-table>
+    </clr-accordion-content>
+  </clr-accordion-panel>
+</clr-accordion>

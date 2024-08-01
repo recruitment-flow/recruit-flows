@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddRequirementComponent } from './add-requirement/add-requirement.component';
 import { NewclientgenerationService } from 'src/app/newclientgeneration/newclientgeneration.service';
-import { Requirement, requirements } from './requirements.component.service';
+import { Requirement } from './requirements.component.service';
 import { 
   ClarityIcons, vmIcon, homeIcon, folderIcon, userIcon, flameIcon, boltIcon, certificateIcon, barChartIcon, angleIcon,
   viewCardsIcon,
@@ -39,19 +39,19 @@ export class RequirementsComponent implements OnInit{
   }
   getRequirements(): void {
     this.loading = true;
-    // this.requirements = [];
-    this.requirements = requirements;
-    console.log(this.requirements, 'Static Data');
-    this.loading = false;
-    // this.clientService.getReq().subscribe({
-    //   next: res => {
-    //     this.requirements = res.data; // Assign the response to a component variable        
-    //    console.log(this.requirements,'Reqqqqqqqqqqq')
-    //   },
-    //   error: error => {
-    //     console.error('Error fetching client data:', error);
-    //   }
-    // });
+    this.requirements = [];
+    // this.requirements = requirements;
+    // console.log(this.requirements, 'Static Data');
+    // this.loading = false;
+    this.clientService.getReq().subscribe({
+      next: res => {
+        this.requirements = res.data; // Assign the response to a component variable        
+       console.log(this.requirements,'Reqqqqqqqqqqq')
+      },
+      error: error => {
+        console.error('Error fetching client data:', error);
+      }
+    });
   }
   closeModal() {
     this.isModalOpen = false;

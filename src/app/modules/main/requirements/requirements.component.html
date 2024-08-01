@@ -3,12 +3,12 @@
     <div class="clr-col-8">
       <h3>
         <cds-icon shape="bars"></cds-icon>
-        User Requirements
+        Client Requirements
       </h3>
     </div>
     <div class="header-actions" style="text-align: right;">
       <button class="btn btn-outline" (click)="openAddRequirementModal()">
-        <strong>+</strong> Add Requirement
+        <i class="fa fa-plus" aria-hidden="true"></i> Add Requirement
       </button>
     </div>
   </div>
@@ -33,23 +33,23 @@
     <clr-dg-column>Skills Required</clr-dg-column>
 
     <clr-dg-row *ngFor="let requirement of requirements">
-      <clr-dg-cell>{{ requirement.requirementNumber }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.requirementDate }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.requirement }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.numberOfPositions }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.workLocation }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.customerName }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.clientName }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.group }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.managerName }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.lead }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.recruiter }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.brNo }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.srNo }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.typeOfSOT }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.rehash }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.requirementLevel }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement.skillsRequired }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.requirement_number  }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.requirement_date }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.requirement }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.number_of_positions }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.work_location }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.customer_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.client_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.group_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.manager_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.lead }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.recruiter }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.br_number }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.sr_number }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.type_of_sot }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.rehash }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.requirement }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement?.attributes?.required_skills }}</clr-dg-cell>
     </clr-dg-row>
 
     <clr-dg-footer>
