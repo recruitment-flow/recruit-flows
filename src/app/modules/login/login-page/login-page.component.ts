@@ -25,17 +25,18 @@ export class LoginPageComponent {
   signIn() {
     this.isSubmitted = true;
     if (this.signInForm.valid) {
-      this.authService.login(this.signInForm.value.user_name, this.signInForm.value.password).subscribe(res => {
-        if (res && res.user) {
+      this.authService.login(this.signInForm.value.user_name, this.signInForm.value.password).subscribe({
+        next: (res) => {
+          // No need to check for errors here as it's handled in the service
           this.authService.redirectToHomePage();
-        } else {
-          this.errorMessage = res.message;
+        },
+        error: (err) => {
+          this.errorMessage = err.message || 'Invalid Credentials. Please try again.';
         }
       });
-    } else {
-      // this.utils.validateAllFormFields(this.signInForm);
     }
   }
+  
 
   redirectToHome() {
     if (this.authService.isAuthTokenAvailable()) {

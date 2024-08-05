@@ -2,8 +2,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { LocalstorageService }from '../app/services/localstorage.service'
 import { AppConfig } from '../../src/environments/environment'; // adjust the path as necessary
 
@@ -36,13 +36,21 @@ export class AuthenticationService {
     // Replace with actual API endpoint for login
     return this.http.post<any>(`${this.apiUrl}/auth/local`, { identifier, password }).pipe(
       tap((response: any) => {
-        localStorage.setItem('loginusername', response.user.username);
-        localStorage.setItem('loginUserRole', response.jwt);
-        // Store token in localStorage upon successful login
-        localStorage.setItem('token', response.jwt);
-        // console.log(localStorage.getItem('token'),'pppppppppppppp')
-        localStorage.setItem(this.authTokenIdentifier, response.jwt);
-        this.loggedIn.next(true); // Update loggedIn state
+        if (response && response.jwt) {
+          // Store token and other user information in localStorage
+          localStorage.setItem('loginusername', response.user.username);
+          localStorage.setItem('loginUserRole', response.user.role || ''); // Assuming 'role' is part of response.user
+          localStorage.setItem('token', response.jwt);
+          localStorage.setItem(this.authTokenIdentifier, response.jwt);
+          this.loggedIn.next(true); // Update loggedIn state
+        } else {
+          throw new Error('Invalid response structure');
+        }
+      }),
+      catchError(error => {
+        // Handle error here and return a user-friendly message
+        console.error('Login error:', error);
+        return throwError(error.error.message || 'An error occurred during login. Please try again.');
       })
     );
   }
