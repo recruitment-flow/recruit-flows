@@ -14,7 +14,7 @@ export class NewclientgenerationService {
   
   getReq(): Observable<any> {
     // Replace with actual API endpoint for login
-    return this.http.get<any>(`${this.apiUrl}/requirments`);
+    return this.http.get<any>(`${this.apiUrl}/requirements`);
     
   }
   getClient(): Observable<any> {
@@ -29,12 +29,12 @@ export class NewclientgenerationService {
   }
   getManager(): Observable<any> {
     // Replace with actual API endpoint for login
-    return this.http.get<any>(`${this.apiUrl}/managers?populate=*`);
+    return this.http.get<any>(`${this.apiUrl}/managers`);
     
   }
   getLeadRecruiter(): Observable<any> {
     // Replace with actual API endpoint for login 
-    return this.http.get<any>(`${this.apiUrl}/users-permissions/roles?populate=*`);
+    return this.http.get<any>(`${this.apiUrl}/leads`);
     
   }
   // getLead(): Observable<any> {
@@ -42,11 +42,11 @@ export class NewclientgenerationService {
   //   return this.http.get<any>(`${this.apiUrl}/leads`);
     
   // }
-  // getRecruiter(): Observable<any> {
-  //   // Replace with actual API endpoint for login
-  //   return this.http.get<any>(`${this.apiUrl}/recruiters`);
+  getRecruiter(): Observable<any> {
+    // Replace with actual API endpoint for login
+    return this.http.get<any>(`${this.apiUrl}/recruiters`);
     
-  // }
+  }
 
   insertActivityList(data: any,type:any){
     return this.http.post(`${this.apiUrl}/${type}`, data);

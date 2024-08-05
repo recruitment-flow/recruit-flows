@@ -31,21 +31,21 @@
   </clr-accordion-panel>
 
   <clr-accordion-panel>
-    <clr-accordion-title><span>Lead ({{ leadSource.length }})</span></clr-accordion-title>
+    <clr-accordion-title (click)="showTableData('leads')"><span>Lead ({{ leadSource.length }})</span></clr-accordion-title>
       <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('lead');">
         <i class="fa fa-plus" aria-hidden="true"></i> Add
       </button>
-    <clr-accordion-content>
+    <clr-accordion-content *ngIf="showLeadData">
       <app-mat-table [displayedColumns]="leadColumns" [columnHeaders]="leadHeaders" [dataSource]="leadSource"></app-mat-table>
     </clr-accordion-content>
   </clr-accordion-panel>
 
   <clr-accordion-panel>
-    <clr-accordion-title><span>Recruiter ({{ recruiterSource.length }})</span></clr-accordion-title>
-      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('recruiter');">
+    <clr-accordion-title (click)="showTableData('recruiters')"><span>Recruiter ({{ recruiterSource.length }})</span></clr-accordion-title>
+      <button class="btn btn-primary btn-sm" (click)="$event.stopPropagation(); openAddClientModal('recruiters');">
         <i class="fa fa-plus" aria-hidden="true"></i> Add
       </button>
-    <clr-accordion-content>
+    <clr-accordion-content *ngIf="showrecruiterData">
       <app-mat-table [displayedColumns]="recruiterColumns" [columnHeaders]="recruiterHeaders" [dataSource]="recruiterSource"></app-mat-table>
     </clr-accordion-content>
   </clr-accordion-panel>

@@ -33,23 +33,23 @@
     <clr-dg-column>Skills Required</clr-dg-column>
 
     <clr-dg-row *ngFor="let requirement of requirements">
-      <clr-dg-cell>{{ requirement?.attributes?.requirement_number  }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.requirement_date }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.requirement }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.number_of_positions }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.work_location }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.customer_name }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.client_name }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.group_name }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.manager_name }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.lead }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.recruiter }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.br_number }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.sr_number }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.type_of_sot }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.rehash }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.requirement }}</clr-dg-cell>
-      <clr-dg-cell>{{ requirement?.attributes?.required_skills }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirement_number  }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirement_date|date:'yyyy-MM-dd' }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirement }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.number_of_positions }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.work_location }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.customer_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.client_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.group_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.manager_name }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.lead }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.recruiter }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.br_number }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.sr_number }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.type_of_sot }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.rehash }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.requirement }}</clr-dg-cell>
+      <clr-dg-cell>{{ requirement.required_skills }}</clr-dg-cell>
     </clr-dg-row>
 
     <clr-dg-footer>

@@ -38,7 +38,8 @@ export class NewclientgenerationComponent implements OnInit {
     this.getClients();
     this.getGroups();
     this.getManager();
-    // this.getLeadRecruiter();
+    this.getLeadRecruiter();
+    this.getRecruiter();
   }
   showTableData(type:any){
     if(type=='clients'){
@@ -57,10 +58,10 @@ export class NewclientgenerationComponent implements OnInit {
     this.clientSource = [];
     this.clientService.getClient().subscribe({
       next: res => {
-        this.clients = res.data; // Assign the response to a component variable        
+        this.clients = res; // Assign the response to a component variable        
         const transformedData = this.clients.map(client => ({
           sno: client.id, // Increment sno based on current length of clientSource
-          name: client.attributes.client_name
+          name: client.client_name
         }));
         this.clientSource.push(...transformedData);
         localStorage.setItem('clientList',JSON.stringify(this.clientSource));
@@ -76,10 +77,10 @@ export class NewclientgenerationComponent implements OnInit {
     this.groupSource = [];
     this.clientService.getGroup().subscribe({
       next: res => {
-        this.clients = res.data; // Assign the response to a component variable        
+        this.clients = res; // Assign the response to a component variable        
         const transformedData = this.clients.map(client => ({
           sno: client.id, // Increment sno based on current length of clientSource
-          name: client.attributes.group_name
+          name: client.group_name
         }));
         this.groupSource.push(...transformedData);
         localStorage.setItem('groupList',JSON.stringify(this.groupSource));
@@ -94,12 +95,12 @@ export class NewclientgenerationComponent implements OnInit {
     this.managerSource = [];
     this.clientService.getManager().subscribe({
       next: res => {
-        this.clients = res.data; // Assign the response to a component variable        
+        this.clients = res; // Assign the response to a component variable        
         const transformedData = this.clients.map(cl => ({
           sno: cl.id, // Increment sno based on current length of clientSource
-          clientName: cl.attributes?.client?.data?.attributes?.client_name,
-          groupName: cl.attributes?.group?.data?.attributes?.group_name,
-          managerName: cl.attributes.name
+          clientName: cl.client_name,
+          groupName: cl.group_name,
+          managerName: cl.manager_name
         }));
         this.managerSource.push(...transformedData);
         this.changeDetectorRef.detectChanges();
@@ -110,17 +111,20 @@ export class NewclientgenerationComponent implements OnInit {
     });
   }
   getLeadRecruiter(): void {
+    this.leadSource = [];
     this.clientService.getLeadRecruiter().subscribe({
       next: res => {
-        this.clients = res.data; // Assign the response to a component variable        
-        const transformedData = this.clients.map(client => ({
-          sno: client.id, // Increment sno based on current length of clientSource
+        this.clients = res; // Assign the response to a component variable        
+        const transformedData = this.clients.map(cli => ({
+          sno: cli.id, // Increment sno based on current length of clientSource
           clientName: null,
           groupName: null,
           managerName: null,
-          leadName:client.attributes.name
+          leadName:cli.lead_name
         }));
         this.leadSource.push(...transformedData);
+        localStorage.setItem('leadList',JSON.stringify(this.leadSource));
+
         this.changeDetectorRef.detectChanges();
       },
       error: error => {
@@ -128,26 +132,27 @@ export class NewclientgenerationComponent implements OnInit {
       }
     });
   }
-  // getRecruiter(): void {
-  //   this.clientService.getRecruiter().subscribe({
-  //     next: res => {
-  //       this.clients = res.data; // Assign the response to a component variable        
-  //       const transformedData = this.clients.map(client => ({
-  //         sno: client.id, // Increment sno based on current length of clientSource
-  //         clientName: null,
-  //         groupName: null,
-  //         managerName: null,
-  //         leadName: null,
-  //         recruiterName: client.attributes.name
-  //       }));
-  //       this.recruiterSource.push(...transformedData);
-  //       this.changeDetectorRef.detectChanges();
-  //     },
-  //     error: error => {
-  //       console.error('Error fetching client data:', error);
-  //     }
-  //   });
-  // }
+  getRecruiter(): void {
+    this.recruiterSource = [];
+    this.clientService.getRecruiter().subscribe({
+      next: res => {
+        this.clients = res; // Assign the response to a component variable        
+        const transformedData = this.clients.map(client => ({
+          sno: client.id, // Increment sno based on current length of clientSource
+          clientName: client.recruiter_name,
+          groupName: client.recruiter_name,
+          managerName: client.recruiter_name,
+          leadName: client.recruiter_name,
+          recruiterName: client.recruiter_name
+        }));
+        this.recruiterSource.push(...transformedData);
+        this.changeDetectorRef.detectChanges();
+      },
+      error: error => {
+        console.error('Error fetching client data:', error);
+      }
+    });
+  }
   closeModal() {
     this.isModalOpen = false;    
   }
@@ -163,6 +168,10 @@ export class NewclientgenerationComponent implements OnInit {
         this.getClients();
         this.getGroups();
         this.getManager();
+        this.getLeadRecruiter();
+        this.getRecruiter();
+
+
         // Add the new requirement to the list
         // this.requirements.push(result);
       }

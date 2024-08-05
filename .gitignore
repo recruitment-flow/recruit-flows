@@ -39,4 +39,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
+# Add these lines to ignore package-lock.json and angular.json
+package-lock.json
+angular.json

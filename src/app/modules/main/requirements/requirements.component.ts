@@ -45,7 +45,7 @@ export class RequirementsComponent implements OnInit{
     // this.loading = false;
     this.clientService.getReq().subscribe({
       next: res => {
-        this.requirements = res.data; // Assign the response to a component variable        
+        this.requirements = res; // Assign the response to a component variable        
        console.log(this.requirements,'Reqqqqqqqqqqq')
       },
       error: error => {

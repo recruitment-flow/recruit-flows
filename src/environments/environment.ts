@@ -5,6 +5,6 @@ export const environment = {
 
 export const AppConfig = {
   // Stage  
-  baseURI: 'http://202.21.38.138:1337/api',
+  baseURI: 'http://202.21.38.138:4000/api',
 
 };

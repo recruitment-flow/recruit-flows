@@ -1,4 +1,4 @@
-<clr-modal [(clrModalOpen)]="modalOpen" [clrModalSize]="'lg'">
+<clr-modal [(clrModalOpen)]="modalOpen">
   <h3 class="modal-title">{{title}}</h3>
   <div class="modal-body">
     <form [formGroup]="addRegistrationForm" (ngSubmit)="onSubmit()">
@@ -6,7 +6,7 @@
         <clr-form>
           <div class="col">
             <div class="form-group">
-              <label for="clientName">Group Name</label>
+              <label for="clientName">Company Name</label>
               <input type="text" class="form-control" id="clientName" formControlName="clientName" placeholder="Client Name">
             </div>
           </div>
@@ -15,6 +15,12 @@
 
       <ng-container *ngIf="data == 'groups'">
         <clr-form>
+          <div class="col">
+            <div class="form-group">
+              <label for="companyName">Company Name</label>
+              <input type="text" class="form-control" id="companyName" formControlName="compNyName" placeholder="Company Name">
+            </div>
+          </div>
           <div class="col">
             <div class="form-group">
               <label for="groupName">Group Name</label>
@@ -26,23 +32,42 @@
 
       <ng-container *ngIf="data == 'managers'">
         <clr-form>
-          <!-- <clr-select-container>
-            <label for="clientName">Client Name</label>
-            <select clrSelect id="clientName" formControlName="clientName">
-              <option selected>Select Client</option>
-              <option *ngFor="let client of clientList" [value]="client.name">{{ client.name }}</option>
-            </select>
-          </clr-select-container>
-          -->
-          <div class="col">
-            <div class="form-group">
-              <label for="clientName">Client Name</label>
-              <select clrSelect id="clientName" formControlName="clientName">
-              <option selected>Select Client</option>
-              <option *ngFor="let client of clientList" [value]="client.name">{{ client.name }}</option>
-              </select>
+          <!-- <div class="clr-form-control">
+            <label for="clientName" class="clr-control-label">Client Name</label>
+            <div class="clr-control-container">
+              <div class="clr-select-wrapper">
+                <select clrSelect id="clientName" formControlName="clientName" class="clr-select">
+                  <option selected>Select Client</option>
+                  <option *ngFor="let client of clientList" [value]="client.name">{{ client.name }}</option>
+                </select>
+              </div>
             </div>
           </div>
+           -->
+           <!-- <clr-combobox-container>
+            <label>Favorite States</label>
+            <clr-combobox [(ngModel)]="selection" name="multiSelect" clrMulti="true" required>
+              <ng-container *clrOptionSelected="let selected">
+                 {{client.name}}
+              </ng-container>
+              <clr-options>
+                <clr-option *ngFor="let client of clientList" [value]="client.name">
+                  {{client.name}}
+                </clr-option>
+              </clr-options>
+            </clr-combobox>
+            <clr-control-error>There was an error</clr-control-error>
+          </clr-combobox-container> -->
+
+          <clr-combobox-container>
+            <label for="clientName">Client Name</label>
+            <clr-combobox id="clientName" formControlName="clientName" clrInput placeholder="Select Client">
+              <clr-options>
+                <clr-option *ngFor="let client of clientList" [clrValue]="client.name">{{ client.name }}</clr-option>
+              </clr-options>
+            </clr-combobox>
+          </clr-combobox-container>
+          
 
           <clr-select-container>
             <label for="groupName">Group Name</label>

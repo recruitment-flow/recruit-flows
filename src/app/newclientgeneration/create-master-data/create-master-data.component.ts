@@ -120,7 +120,7 @@ groupList:any;
   }
   onSubmit() {
     if (this.addRegistrationForm.valid) {
-      const payload = {data:this.setPayload()};
+      const payload = this.setPayload();
       this.newclientService.insertActivityList(payload,this.data).subscribe(res => {
         this.closeModal();
       });

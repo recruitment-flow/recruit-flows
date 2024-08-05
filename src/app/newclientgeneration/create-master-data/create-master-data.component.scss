@@ -1,8 +1,4 @@
 /* add-requirement-dialog.component.css */
-mat-dialog-content {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
   
   h2 {
     margin-bottom: 20px;
@@ -36,6 +32,10 @@ mat-dialog-content {
     border-radius: 4px;
     font-size: 14px;
   }
+
+  .clr-control-container {
+    box-sizing: 85% !important;
+}
   
   .form-control:focus {
     border-color: #007bff;

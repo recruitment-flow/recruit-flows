@@ -18,7 +18,7 @@
   }
   
   .card-header {
-    background-color: #3B4B64; /* Set card header background color */
+    background-color:#00567a; /* Set card header background color */
     color: #fff;
     padding: 10px;
     border-top-left-radius: 5px;
@@ -27,7 +27,8 @@
   
   .card-title {
     margin-top: 0;
-    margin-bottom: 0; /* Remove default margin */
+    margin-bottom: 0;
+    color: white; /* Remove default margin */
   }
   
   .card-body {
