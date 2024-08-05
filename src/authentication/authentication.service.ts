@@ -18,7 +18,7 @@ interface User {
 export class AuthenticationService {
   private loggedIn = new BehaviorSubject<boolean>(false);
   private authTokenIdentifier = 'token';
-  private apiUrl = AppConfig.baseURI;
+  private apiUrl = 'http://202.21.38.138:1337/api';
   constructor(private http: HttpClient, private router: Router,
     private localStorageService: LocalstorageService) {
     // Check if user is already logged in (e.g., from localStorage or sessionStorage)
